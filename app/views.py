@@ -3,12 +3,12 @@
 from app import app
 from flask import render_template, redirect, request, url_for, session
 from forms import SigninForm, SignupForm
-from models import User
+from models import User, db
 
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return "hello world"
 
 
 @app.route('/about')
