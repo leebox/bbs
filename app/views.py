@@ -7,12 +7,14 @@ from models import User, db
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    user = User.query.filter_by(email=session['email']).first()
+    return render_template('home.html', user=user)
 
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    user = User.query.filter_by(email=session['email']).first()
+    return render_template('about.html', user=user)
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -40,11 +42,10 @@ def profile():
         return redirect(url_for('signin'))
 
     user = User.query.filter_by(email=session['email']).first()
-    username = user.username
     if user is None:
         return redirect(url_for('signin'))
     else:
-        return render_template('profile.html', username=username)
+        return render_template('profile.html', user=user)
 
 
 @app.route('/signin', methods=['GET', 'POST'])
