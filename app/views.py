@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-#coding=utf-8
+# -*- coding: utf-8 -*-
 from app import app
 from flask import render_template, redirect, request, url_for, session
 from forms import SigninForm, SignupForm
@@ -8,7 +7,7 @@ from models import User, db
 
 @app.route('/')
 def home():
-    return "hello world"
+    return render_template('home.html')
 
 
 @app.route('/about')

@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-#coding=utf-8
+# -*- coding: utf-8 -*-
 # 防止文件中有中文出现乱码现象
 import sys
 reload(sys)

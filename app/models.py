@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-#coding=utf-8
+# -*- coding: utf-8 -*-
 from flask.ext.sqlalchemy import SQLAlchemy
 #加密保存密码
 from werkzeug.security import generate_password_hash, check_password_hash
